@@ -1,3 +1,10 @@
 // Place all the styles related to the monitorings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table tr.oddrow {
+    background-color: #111111;
+}
+
+table tr.evenrow {
+    background-color: #333333;
+}

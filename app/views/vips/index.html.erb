@@ -14,13 +14,13 @@
 
   <table id="vips">
     <tr align="left">
+      <th>Prénom</th>
       <th>Nom</th>
-      <th>Prenom</th>
     </tr>
     <% @vips.each do |vip| %>
         <tr>
-        <td><%= link_to(vip.nom, vip) %></td>
-        <td><%= link_to(vip.prenom, vip) %></td>
+        <td style="font-size:1.3em; font-weight:bold;"><%= link_to(vip.prenom, vip) %></td>
+        <td style="font-size:1.3em; font-weight:bold;"><%= link_to(vip.nom, vip) %></td>
         
         <td><%= link_to image_tag("loupe.png", :border=>0, :class => 'dock-item'), vip %></td>
         <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_vip_path(vip) %></td>
@@ -28,7 +28,9 @@
       </tr>
     <% end %>
 </table>
-
+<script>
+$( "tr:odd" ).css( "background-color", "#E0DEF2" );
+</script>
   <br>
   
   </br>

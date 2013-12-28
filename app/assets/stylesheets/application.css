@@ -15,7 +15,7 @@
 }
 
 .container {
-  width: 95%;
+  width: 98%;
   margin: 0 auto;
 }
 
@@ -168,3 +168,7 @@ footer {
 footer nav {
   float: none;
 }
+
+ table {
+        border-collapse: collapse;
+    }

@@ -2,13 +2,13 @@
 <table width="100%">
 
   <COLGROUP align="center">
-  <COL align=left style="width:10%">
+  <COL align=left style="width:15%">
   <COL align=left style="width:5%">
-  <COL align=left style="width:25%">
+  <COL align=left style="width:35%">
+  <COL align=left style="width:5%">
   <COL align=left style="width:10%">
   <COL align=left style="width:10%">
-  <COL align=left style="width:10%">
-  <COL align=left style="width:10%">
+  <%#*<COL align=left style="width:10%">%>
   <COL align=left style="width:25%">
   </COLGROUP>
 
@@ -19,7 +19,7 @@
       <th>N°Ticket</th>
       <th>Date ouverture</th>
       <th>Estimation cloture</th>
-      <th>Date cloture</th>
+      <%#*<th>Date cloture</th>%>
       <th>Commentaire</th>
     </tr>
   
@@ -27,14 +27,14 @@
   <tbody>
     <% @monitorings.each do |monitoring| %>
       <tr>
-        <td><%= monitoring.monitoring_status.name %></td>
-        <td><%= monitoring.trigramme %></td>
-        <td><%= monitoring.vip.prenom + " " + monitoring.vip.nom  %></td>
-        <td><%= monitoring.oscar_ticket_id %></td>
-        <td><%= monitoring.date_ouverture %></td>
-        <td><%= monitoring.date_estimation_cloture %></td>
-        <td><%= monitoring.date_cloture %></td>
-        <td><%= monitoring.comment %></td>
+        <td style="font-size:2em; font-weight:bold;"><%= monitoring.monitoring_status.name %></td>
+        <td style="font-size:1.5em; font-weight:bold;"><%= monitoring.trigramme %></td>
+        <td style="font-size:2em; font-weight:bold;"><%= monitoring.vip.prenom + " " + monitoring.vip.nom  %></td>
+        <td style="font-size:1.6em; font-weight:bold;"><%= monitoring.oscar_ticket_id %></td>
+        <td style="font-size:1em; font-weight:bold;"><%= monitoring.date_ouverture %></td>
+        <td style="font-size:1em; font-weight:bold;"><%= monitoring.date_estimation_cloture %></td>
+        <%#*<td style="font-size:1em; font-weight:bold;"><%= monitoring.date_cloture %</td>%>
+        <td style="font-size:1.5em; font-weight:bold;"><%= monitoring.comment %></td>
         
         
         <%#*<td><%= link_to 'Show', monitoring %</td>%>
@@ -44,7 +44,8 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
+<script>
+$( "tr:odd" ).css( "background-color", "#E0DEF2" );
+</script>
 
 <%= link_to 'New Monitoring', new_monitoring_path %>
