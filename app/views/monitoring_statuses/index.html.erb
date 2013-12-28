@@ -1,0 +1,27 @@
+<h1>Listing monitoring status</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @monitoring_statuses.each do |monitoring_status| %>
+      <tr>
+        <td><%= monitoring_status.name %></td>
+        <td><%= link_to 'Show', monitoring_status %></td>
+        <td><%= link_to 'Edit', edit_monitoring_status_path(monitoring_status) %></td>
+        <td><%= link_to 'Destroy', monitoring_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Monitoring status', new_monitoring_status_path %>

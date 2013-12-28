@@ -1,0 +1,41 @@
+<%= simple_form_for(@monitoring) do |f| %>
+  <% if @monitoring.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@monitoring.errors.count, "error") %> prohibited this monitoring from being saved:</h2>
+
+      <ul>
+      <% @monitoring.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :oscar_ticket_id %>
+  </div>
+  <div class="field">
+    <%= f.input :trigramme %>
+  </div>
+  <div class="field">
+    <%= f.input :comment %>
+  </div>
+  <div class="field">
+    <%= f.input :date_ouverture %>
+  </div>
+  <div class="field">
+    <%= f.input :date_estimation_cloture %>
+  </div>
+  <div class="field">
+    <%= f.input :date_cloture %>
+  </div>
+  <div class="field">
+    <%= f.input :vip_id, collection: Vip.all.map {|c| [c.nom, c.id]}    %>
+  </div>
+  <div class="field">
+    <%= f.input :monitoring_status_id, collection: MonitoringStatus.all.map {|c| [c.name, c.id]}  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

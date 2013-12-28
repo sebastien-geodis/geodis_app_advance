@@ -1,0 +1,19 @@
+<header>
+  <%= link_to(image_tag("logo.png", :width => "110", :height => "60", :alt => "Gestion Support Géodis", :class => "round"),'/') %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Accueil", '/pages/home' %></li>
+      <li><%= link_to "Status", '/interventions' %></li>
+      <li><%= link_to "Infos Vip", '/vips' %></li>
+      <li><%= link_to "Monitoring", '/monitorings' %></li>
+    </ul>
+  </nav>
+  <div id="user_nav">
+          <% if user_signed_in? %>
+            Bienvenue <%= current_user.prenom %>
+            &nbsp  <%= link_to "Déconnexion ?", destroy_user_session_path, :method => :delete %>
+            <% else %>
+            <%= link_to "Créer un compte", new_user_registration_path %> ou <%= link_to "Log in", new_user_session_path %>
+          <% end %>
+  </div>
+</header>

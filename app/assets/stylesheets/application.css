@@ -1,0 +1,170 @@
+/*
+    Document   : custom
+    Created on : 24 déc. 2013, 11:53:32
+    Author     : Sebastien.AUDEL
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+#user_nav{
+    color: white;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+body {
+  background: #132959;
+}
+
+header {
+  padding-top: 20px;
+}
+
+header img {
+  padding: 1em;
+  background: #fff;
+}
+
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #fff;
+}
+
+section h1 {
+  font-size: 200%;
+}
+
+/* Liens */
+
+a {
+  color: #E8CC06;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E8CC06;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #09c;
+}
+
+/* Navigation */
+
+nav {
+  float: right;
+}
+
+nav {
+  background-color: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: #E8CC06;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Bouton inscription */
+
+a.signup_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #60a917;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+a.signup_button_2 {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #76608a;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+a.signup_button_3 {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #a20025;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+a.signup_button_4 {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #fa6800;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+/* Coins arrondis */
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+.round2 {
+  -moz-border-radius:    5px;
+  -webkit-border-radius: 5px;
+  border-radius:         5px;
+}
+footer {
+  text-align: center;
+  margin-top: 10px;
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer nav {
+  float: none;
+}

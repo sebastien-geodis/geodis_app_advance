@@ -1,0 +1,35 @@
+<center><%= link_to "Status", '', :class => "signup_button_4 " %></center>
+<table width="100%">
+
+  <COLGROUP align="center">
+  <COL align=left style="width:40%">
+  <COL align=left style="width:20%">
+  <COL align=left style="width:40%">
+  </COLGROUP>
+  <thead>
+    <tr align="left">
+      <th>Technicien</th>
+      <th>Statut</th>
+      <th>Client</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interventions.each do |intervention| %>
+      <tr>
+        <td><%= intervention.user.prenom + " " + intervention.user.nom %></td>
+        <td><%= intervention.intervention_status.name %></td>
+        <td><%= intervention.vip.prenom + " " + intervention.vip.nom %></td>
+        <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_intervention_path(intervention) %></td>
+        <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), intervention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Intervention', new_intervention_path %>

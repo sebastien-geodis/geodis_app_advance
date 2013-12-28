@@ -1,0 +1,26 @@
+<%= simple_form_for(@intervention) do |f| %>
+  <% if @intervention.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@intervention.errors.count, "error") %> prohibited this intervention from being saved:</h2>
+
+      <ul>
+      <% @intervention.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :user_id, collection: User.all.map {|c| [c.nom, c.id]}  %>
+  </div>
+  <div class="field">
+    <%= f.input :intervention_status_id, collection: InterventionStatus.all.map {|c| [c.name, c.id]}  %>
+  </div>
+  <div class="field">
+    <%= f.input :vip_id, collection: Vip.all.map {|c| [c.nom, c.id]}  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

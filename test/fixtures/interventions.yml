@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  intervention-status_id: 1
+  vip_id: 1
+  is_complete: false
+
+two:
+  user_id: 1
+  intervention-status_id: 1
+  vip_id: 1
+  is_complete: false

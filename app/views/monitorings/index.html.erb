@@ -1,0 +1,50 @@
+<center><%= link_to "Monitoring", '', :class => "signup_button_3 " %></center>
+<table width="100%">
+
+  <COLGROUP align="center">
+  <COL align=left style="width:10%">
+  <COL align=left style="width:5%">
+  <COL align=left style="width:25%">
+  <COL align=left style="width:10%">
+  <COL align=left style="width:10%">
+  <COL align=left style="width:10%">
+  <COL align=left style="width:10%">
+  <COL align=left style="width:25%">
+  </COLGROUP>
+
+    <tr align="left">
+      <th>Status</th>
+      <th>Trig</th>
+      <th>Demandeur</th>
+      <th>N°Ticket</th>
+      <th>Date ouverture</th>
+      <th>Estimation cloture</th>
+      <th>Date cloture</th>
+      <th>Commentaire</th>
+    </tr>
+  
+
+  <tbody>
+    <% @monitorings.each do |monitoring| %>
+      <tr>
+        <td><%= monitoring.monitoring_status.name %></td>
+        <td><%= monitoring.trigramme %></td>
+        <td><%= monitoring.vip.prenom + " " + monitoring.vip.nom  %></td>
+        <td><%= monitoring.oscar_ticket_id %></td>
+        <td><%= monitoring.date_ouverture %></td>
+        <td><%= monitoring.date_estimation_cloture %></td>
+        <td><%= monitoring.date_cloture %></td>
+        <td><%= monitoring.comment %></td>
+        
+        
+        <%#*<td><%= link_to 'Show', monitoring %</td>%>
+        <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_monitoring_path(monitoring) %></td>
+        <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), monitoring, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Monitoring', new_monitoring_path %>

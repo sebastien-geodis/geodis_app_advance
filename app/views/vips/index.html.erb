@@ -1,0 +1,36 @@
+<center><%= link_to "Infos VIP", '', :class => "signup_button_2 " %></center>
+<br>
+</br>
+<center>
+  <%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :nom_cont, "Rechercher un VIP:" %>
+    <%= f.text_field :nom_cont %>
+    <%= f.submit "Rechercher" %>
+  </div>
+  
+<% end %>
+</center>
+
+  <table id="vips">
+    <tr align="left">
+      <th>Nom</th>
+      <th>Prenom</th>
+    </tr>
+    <% @vips.each do |vip| %>
+        <tr>
+        <td><%= link_to(vip.nom, vip) %></td>
+        <td><%= link_to(vip.prenom, vip) %></td>
+        
+        <td><%= link_to image_tag("loupe.png", :border=>0, :class => 'dock-item'), vip %></td>
+        <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_vip_path(vip) %></td>
+        <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), vip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+</table>
+
+  <br>
+  
+  </br>
+
+<%= link_to 'New Vip', new_vip_path %>

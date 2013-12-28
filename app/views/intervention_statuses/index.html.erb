@@ -1,0 +1,27 @@
+<h1>Listing intervention_statuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @intervention_statuses.each do |intervention_status| %>
+      <tr>
+        <td><%= intervention_status.name %></td>
+        <td><%= link_to 'Show', intervention_status %></td>
+        <td><%= link_to 'Edit', edit_intervention_status_path(intervention_status) %></td>
+        <td><%= link_to 'Destroy', intervention_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Intervention status', new_intervention_status_path %>

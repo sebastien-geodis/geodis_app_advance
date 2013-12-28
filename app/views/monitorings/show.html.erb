@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Oscar ticket:</strong>
+  <%= @monitoring.oscar_ticket_id %>
+</p>
+
+<p>
+  <strong>Trigramme:</strong>
+  <%= @monitoring.trigramme %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @monitoring.comment %>
+</p>
+
+<p>
+  <strong>Date ouverture:</strong>
+  <%= @monitoring.date_ouverture %>
+</p>
+
+<p>
+  <strong>Date estimation cloture:</strong>
+  <%= @monitoring.date_estimation_cloture %>
+</p>
+
+<p>
+  <strong>Date cloture:</strong>
+  <%= @monitoring.date_cloture %>
+</p>
+
+<p>
+  <strong>Vip:</strong>
+  <%= @monitoring.vip_id %>
+</p>
+
+<p>
+  <strong>Monitoring status:</strong>
+  <%= @monitoring.monitoring_status_id %>
+</p>
+
+<%= link_to 'Edit', edit_monitoring_path(@monitoring) %> |
+<%= link_to 'Back', monitorings_path %>

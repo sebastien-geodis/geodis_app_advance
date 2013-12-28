@@ -1,0 +1,2 @@
+module MonitoringStatusesHelper
+end
