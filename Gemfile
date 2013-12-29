@@ -31,6 +31,12 @@ gem 'ransack'
 #gestion des droits utilisateurs
 gem 'cancan'
 
+#Ajout des avatars vip
+gem 'paperclip'
+
+#ajout de pagination pour info vip
+gem 'will_paginate'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

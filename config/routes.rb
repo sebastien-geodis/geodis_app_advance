@@ -43,6 +43,12 @@ Geodis::Application.routes.draw do
     end
   end
 
+  resources :styles do
+   collection do
+    match 'search' => 'styles#index', :via => [:get, :post], :as => :search
+   end
+  end
+
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

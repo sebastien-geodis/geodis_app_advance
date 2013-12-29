@@ -30,10 +30,10 @@
     <%= f.input :date_cloture %>
   </div>
   <div class="field">
-    <%= f.input :vip_id, collection: Vip.all.map {|c| [c.nom, c.id]}    %>
+    <%= f.input :vip_id, collection: Vip.all.map {|c| [c.nom, c.id]}, :required => true     %>
   </div>
   <div class="field">
-    <%= f.input :monitoring_status_id, collection: MonitoringStatus.all.map {|c| [c.name, c.id]}  %>
+    <%= f.input :monitoring_status_id, collection: MonitoringStatus.all.map {|c| [c.name, c.id]}, :required => true   %>
   </div>
   <div class="actions">
     <%= f.submit %>

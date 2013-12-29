@@ -26,7 +26,7 @@
         <% if can? :update, intervention %>
         <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_intervention_path(intervention) %></td>
         <%end%>
-        <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), intervention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), intervention, method: :delete, data: { confirm: "Cette action est irréversible, voulez vous continuer?" } %></td>
       </tr>
     <% end %>
   </tbody>

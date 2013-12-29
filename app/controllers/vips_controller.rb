@@ -1,12 +1,13 @@
 class VipsController < ApplicationController
   before_action :set_vip, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+ load_and_authorize_resource
   
   # GET /vips
   # GET /vips.json
+  
   def index
     @search = Vip.search(params[:q])
-    @vips = @search.result
+    @vips = @search.result(:distinct => true).paginate(:page => params[:page], :per_page => 4)
   end
 
   # GET /vips/1
@@ -18,7 +19,7 @@ class VipsController < ApplicationController
 
   # GET /vips/new
   def new
-    @vip = Vip.new
+    @vip = Vip.new(params[:id])
   end
 
   # GET /vips/1/edit
@@ -71,8 +72,9 @@ class VipsController < ApplicationController
       @vip = Vip.find(params[:id])
     end
 
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def vip_params
-      params.require(:vip).permit(:nom, :prenom, :localisation, :fonction, :service, :email, :tel_fixe, :tel_portable, :assistante, :identifiants, :materiel, :domaine, :divers)
+      params.require(:vip).permit(:nom, :prenom, :localisation, :fonction, :service, :email, :tel_fixe, :tel_portable, :assistante, :identifiants, :materiel, :domaine, :divers, :photo)
     end
 end

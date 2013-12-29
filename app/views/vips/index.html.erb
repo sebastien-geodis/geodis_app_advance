@@ -11,23 +11,32 @@
   
 <% end %>
 </center>
+<br>
 
+</br>
+  
+  <center>
   <table id="vips">
-    <tr align="left">
+    <%= will_paginate @styles %>
+    <tr align="center">
+      <th> </th>
       <th>Prénom</th>
       <th>Nom</th>
     </tr>
     <% @vips.each do |vip| %>
         <tr>
-        <td style="font-size:1.3em; font-weight:bold;"><%= link_to(vip.prenom, vip) %></td>
-        <td style="font-size:1.3em; font-weight:bold;"><%= link_to(vip.nom, vip) %></td>
+          <td style="font-size:1.3em; font-weight:bold;"><%= image_tag vip.photo.url(:very_small) %></td>
+          <td style="font-size:1.3em;"><%= link_to(vip.prenom, vip) %></td>
+          <td style="font-size:1.3em; font-weight:bold;"><%= link_to(vip.nom, vip) %></td>
         
-        <td><%= link_to image_tag("loupe.png", :border=>0, :class => 'dock-item'), vip %></td>
-        <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_vip_path(vip) %></td>
-        <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), vip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to image_tag("loupe.png", :border=>0, :class => 'dock-item'), vip %></td>
+          <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_vip_path(vip) %></td>
+          <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), vip, method: :delete, data: { confirm: "Cette action est irréversible, voulez vous continuer?" } %></td>
       </tr>
     <% end %>
 </table>
+    <%= will_paginate @styles %>
+</center>
 <script>
 $( "tr:odd" ).css( "background-color", "#E0DEF2" );
 </script>

@@ -6,4 +6,11 @@ class ApplicationController < ActionController::Base
   flash[:error] = "Access denied!"
   redirect_to root_url
   end
+
+  before_filter do
+  resource = controller_name.singularize.gsub('/', '_').to_sym
+  method = "#{resource}_params"
+  params[resource] &&= send(method) if respond_to?(method, true)
+end
+
 end

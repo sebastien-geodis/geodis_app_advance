@@ -39,7 +39,7 @@
         
         <%#*<td><%= link_to 'Show', monitoring %</td>%>
         <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_monitoring_path(monitoring) %></td>
-        <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), monitoring, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), monitoring, method: :delete, data: { confirm: "Cette action est irréversible, voulez vous continuer?" } %></td>
       </tr>
     <% end %>
   </tbody>
