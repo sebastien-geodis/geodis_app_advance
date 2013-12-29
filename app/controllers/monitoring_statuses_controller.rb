@@ -1,6 +1,6 @@
 class MonitoringStatusesController < ApplicationController
   before_action :set_monitoring_status, only: [:show, :edit, :update, :destroy]
-
+load_and_authorize_resource
   # GET /monitoring_statuses
   # GET /monitoring_statuses.json
   def index

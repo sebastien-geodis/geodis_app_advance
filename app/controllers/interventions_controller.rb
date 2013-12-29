@@ -1,5 +1,7 @@
 class InterventionsController < ApplicationController
   before_action :set_intervention, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  
 
   # GET /interventions
   # GET /interventions.json
@@ -19,6 +21,7 @@ class InterventionsController < ApplicationController
 
   # GET /interventions/1/edit
   def edit
+    @intervention = Intervention.find(params[:id])
   end
 
   # POST /interventions

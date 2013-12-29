@@ -28,6 +28,9 @@ gem 'devise'
 #système de recherche
 gem 'ransack'
 
+#gestion des droits utilisateurs
+gem 'cancan'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

@@ -5,7 +5,7 @@
     <tr>
       <th>Technicien</th>
       <th> </th>
-      <%#*<th>Is admin</th>%>
+      <th>Is admin</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= user.prenom %></td>
         <td><%= user.nom %></td>
-        <%#*<td><%= user.is_admin </td>%>
+        <td><%= user.is_admin %></td>
         <td><%= link_to image_tag("loupe.png", :border=>0, :class => 'dock-item'), user %></td>
         <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_user_path(user) %></td>
         <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -2,9 +2,9 @@
 <table width="100%">
 
   <COLGROUP align="center">
-  <COL align=left style="width:40%">
+  <COL align=left style="width:45%">
   <COL align=left style="width:10%">
-  <COL align=left style="width:50%">
+  <COL align=left style="width:45%">
   </COLGROUP>
   <thead>
     <tr align="left">
@@ -23,7 +23,9 @@
         <td style="font-size:3em; font-weight:bold;"><%= intervention.user.prenom + " " + intervention.user.nom %></td>
         <td style="font-size:2em; font-weight:bold;"><%= intervention.intervention_status.name %></td>
         <td style="font-size:3em; font-weight:bold;"><%= intervention.vip.prenom + " " + intervention.vip.nom %></td>
+        <% if can? :update, intervention %>
         <td><%= link_to image_tag("crayon.gif", :border=>0, :class => 'dock-item'), edit_intervention_path(intervention) %></td>
+        <%end%>
         <td><%= link_to image_tag("Croix-rouge.png", :border=>0, :class => 'dock-item'), intervention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

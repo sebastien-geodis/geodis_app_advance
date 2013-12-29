@@ -1,6 +1,7 @@
 class VipsController < ApplicationController
   before_action :set_vip, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /vips
   # GET /vips.json
   def index

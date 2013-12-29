@@ -1,6 +1,6 @@
 class InterventionStatusesController < ApplicationController
   before_action :set_intervention_status, only: [:show, :edit, :update, :destroy]
-
+load_and_authorize_resource
   # GET /intervention_statuses
   # GET /intervention_statuses.json
   def index

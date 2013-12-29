@@ -11,7 +11,8 @@
   <div id="user_nav">
           <% if user_signed_in? %>
             Bienvenue <%= current_user.prenom %>
-            &nbsp  <%= link_to "Déconnexion ?", destroy_user_session_path, :method => :delete %>
+            &nbsp  <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete %>
+            ou     <%= link_to "changer de mot de passe", '/users/edit' %>
             <% else %>
             <%= link_to "Créer un compte", new_user_registration_path %> ou <%= link_to "Log in", new_user_session_path %>
           <% end %>

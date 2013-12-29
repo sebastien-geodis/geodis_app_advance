@@ -1,6 +1,6 @@
 class UserStatusesController < ApplicationController
   before_action :set_user_status, only: [:show, :edit, :update, :destroy]
-
+load_and_authorize_resource
   # GET /user_statuses
   # GET /user_statuses.json
   def index
