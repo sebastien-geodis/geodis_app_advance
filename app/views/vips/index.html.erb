@@ -20,8 +20,8 @@
     <%= will_paginate @styles %>
     <tr align="center">
       <th> </th>
-      <th>Prénom</th>
-      <th>Nom</th>
+      <th><%= sort_link @search, :prenom, "Prénom" %></th>
+      <th><%= sort_link @search, :nom, "Nom" %><=(tri)</th>
     </tr>
     <% @vips.each do |vip| %>
         <tr>

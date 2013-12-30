@@ -37,6 +37,9 @@ gem 'paperclip'
 #ajout de pagination pour info vip
 gem 'will_paginate'
 
+#suppression messages derreur dans la console git
+gem 'thin'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
